@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTNI - Oyunlar</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS stilleri ana sayfa ile aynı olmalıdır */
+        :root {
+            --primary-color: #0d1117; 
+            --secondary-color: #161b22; 
+            --accent-color: #58a6ff; 
+            --text-color: #c9d1d9; 
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif; 
+            margin: 0;
+            padding-bottom: 80px;
+            background-color: var(--primary-color); 
+            color: var(--text-color); 
+            text-align: center;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            padding: 30px 0;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin: 0;
+            letter-spacing: 6px;
+            font-weight: 700; 
+            color: var(--white);
+        }
+
+        header p {
+            color: var(--text-color);
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+
+        nav {
+            margin-top: 25px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 400;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .content {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .content h2 {
+            color: var(--accent-color);
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        .game-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .game-item {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+            text-align: left;
+        }
+        
+        .game-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .game-item h3 {
+            color: var(--white);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        .game-item p {
+            color: var(--text-color);
+            font-size: 0.95em;
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            padding: 20px 0;
+            width: 100%;
+            position: absolute; 
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>TTNI</h1>
+        <p>Oyun, Eğlence ve Topluluğun Yeni Adresi</p>
+        <nav>
+            <a href="anasayfa.html">Ana Sayfa</a>
+            <a href="hakkimizda.html">Kurucu TTNI</a>
+            <a href="oyunlar.html" style="color: var(--accent-color); border-bottom: 2px solid var(--accent-color);">Oyunlar</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h2>Oynadığımız Başlıca Oyunlar</h2>
+        
+        <ul class="game-list">
+            <li class="game-item">
+                <h3>One Armed Robber</h3>
+                <p>Ekibimizle birlikte planlı soygunlar yaptığımız, gerilim dolu ve eğlenceli co-op deneyimi!</p>
+            </li>
+            <li class="game-item">
+                <h3>One Armed Cook</h3>
+                <p>Mutfak kaosu! Tek kollu aşçı olarak en lezzetli yemekleri yapmaya çalıştığımız komik ve zorlu simülasyon.</p>
+            </li>
+            <li class="game-item">
+                <h3>Minecraft Java</h3>
+                <p>TTNI'ye özel sunucularda inşa ettiğimiz devasa yapılar, hayatta kalma maceraları ve yaratıcılığın sınırlarını zorlayan projeler.</p>
+            </li>
+            <li class="game-item">
+                <h3>Supermarket Together</h3>
+                <p>Market yönetimini birlikte üstlendiğimiz, stok, kasa ve temizlik görevlerini eğlenceli bir şekilde hallettiğimiz co-op oyun.</p>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 TTNI | Oyun Dünyası</p>
+    </footer>
+
+</body>
+</html>

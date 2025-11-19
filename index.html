@@ -3,157 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TTNI - Oyun Dünyasının Yeni Durağı</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    
+    <title>Items Adder Kurulum Rehberi</title>
     <style>
-        /* Siyah Tema ve Font Ayarları */
-        :root {
-            --primary-color: #0d1117; 
-            --secondary-color: #161b22; 
-            --accent-color: #58a6ff; 
-            --text-color: #c9d1d9; 
-            --white: #ffffff;
-        }
-
         body {
-            font-family: 'Montserrat', sans-serif; 
-            margin: 0;
-            padding-bottom: 80px; /* Footer için boşluk */
-            background-color: var(--primary-color); 
-            color: var(--text-color); 
-            text-align: center;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #d4d4d4;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* İçeriğin yukarıdan başlaması için */
+            padding-top: 50px;
             min-height: 100vh;
-            position: relative;
-        }
-
-        header {
-            background-color: var(--secondary-color);
-            padding: 30px 0;
-            border-bottom: 3px solid var(--accent-color);
-        }
-
-        h1 {
-            font-size: 3.5em;
             margin: 0;
-            letter-spacing: 6px;
-            font-weight: 700; 
-            color: var(--white);
         }
-
-        header p {
-            color: var(--text-color);
-            font-size: 1.1em;
-            margin-top: 5px;
+        .guide-container {
+            background-color: #2b2b2b;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+            max-width: 700px;
+            width: 90%;
+            text-align: left;
         }
-
-        nav {
-            margin-top: 25px;
-        }
-
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin: 0 20px;
-            font-weight: 400;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: color 0.3s, border-bottom 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-            border-bottom: 2px solid var(--accent-color);
-        }
-
-        .content {
-            padding: 80px 20px;
-        }
-        
-        h2 {
-            color: var(--accent-color);
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
             font-size: 2em;
+        }
+        h2 {
+            color: #8c7ae6;
+            margin-top: 25px;
             margin-bottom: 15px;
+            font-size: 1.5em;
         }
-
-        .discord-button {
+        ol {
+            padding-left: 20px;
+            line-height: 1.6;
+            list-style-type: none; /* Varsayılan numaralandırmayı kaldır */
+        }
+        ol li {
+            margin-bottom: 20px;
+            counter-increment: step-counter; /* Özel sayaç başlat */
+            position: relative;
+            padding-left: 35px; /* Numaralar için boşluk */
+        }
+        ol li::before {
+            content: counter(step-counter); /* Özel sayacı kullan */
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .code {
+            background-color: #3a3a3a;
+            padding: 5px;
+            border-radius: 4px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            color: #ffcc00; /* Sarı kod rengi */
+        }
+        .download-button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .download-link {
             display: inline-block;
-            background-color: #5865f2; 
-            color: var(--white);
-            padding: 18px 40px;
+            padding: 15px 35px;
+            background-color: #e74c3c; /* Kırmızı indirme butonu */
+            color: white;
             text-decoration: none;
-            font-size: 1.3em;
-            font-weight: 700;
-            border-radius: 10px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .download-link:hover {
+            background-color: #c0392b;
+        }
+        .footer {
             margin-top: 40px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-            transition: background-color 0.3s, transform 0.2s;
-            border: 1px solid #4e5ad6;
-        }
-
-        .discord-button:hover {
-            background-color: #4e5ad6;
-            transform: translateY(-3px);
-        }
-
-        .content ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 30px;
-        }
-        
-        .content ul li {
-            background-color: var(--secondary-color);
-            margin: 10px auto;
-            padding: 10px;
-            border-radius: 5px;
-            width: fit-content;
-            color: var(--text-color);
-        }
-
-        footer {
-            background-color: var(--secondary-color);
-            padding: 20px 0;
-            width: 100%;
-            position: absolute; 
-            bottom: 0;
+            text-align: center;
+            font-size: 0.8em;
+            color: #7f8c8d;
+            border-top: 1px solid #3a3a3a;
+            padding-top: 15px;
         }
     </style>
 </head>
 <body>
+    <div class="guide-container">
+        <h1>🛠️ Items Adder Kurulum Rehberine Hoş Geldiniz</h1>
+        
+        <div class="download-button-container">
+            <a href="ItemsAdder.zip" class="download-link">⬇️ İNDİR BUTONU (ItemsAdder.zip)</a>
+        </div>
+        
+        <h2>Kurulum Adımları:</h2>
+        <ol>
+            <li>
+                Açılan Siteden **İndir Butonuna** basarak **.zip** dosyasını bilgisayarınıza indiriniz.
+            </li>
+            <li>
+                Zip Dosyasının içindeki **Bütün Herşeyi** (.txt ve .exe hariç) sunucunuzun **plugins** klasörüne atınız.
+            </li>
+            <li>
+                Ardından sunucunuzu yeniden başlatınız (Restart atınız) veya oyundayken <span class="code">/reload</span> komutunu kullanınız.
+            </li>
+            <li>
+                Sunucunuz açıldıktan sonra, Items Adder addonunun **Config Dosyasına** gidiniz.
+            </li>
+            <li>
+                Config dosyasını düzenle deyip **self-host** ayarını **<span class="code">true</span>** yapınız.
+            </li>
+            <li>
+                **server-ip** ayarına Bilgisayarınızın veya hostinginizin **IP adresini** yazınız.
+                <ul>
+                    <li>Eğer hangi IP olduğunu bilmiyorsanız, **CMD**'yi açıp <span class="code">ipconfig</span> yazın ve çıkan **IPv4 Adresini** buraya yapıştırınız.</li>
+                </ul>
+            </li>
+        </ol>
 
-    <header>
-        <h1>TTNI</h1>
-        <p>Oyun, Eğlence ve Topluluğun Yeni Adresi</p>
-        <nav>
-            <a href="anasayfa.html">Ana Sayfa</a>
-            <a href="hakkimizda.html">Kurucu TTNI</a>
-            <a href="oyunlar.html">Oyunlar</a>
-            <a href="iletisim.html">İletişim</a>
-        </nav>
-    </header>
-
-    <div class="content">
-        <h2>TTNI Topluluğuna Katıl</h2>
-        <p>Sıcak bir karşılama, sayısız oyun etkinliği ve harika insanlarla tanışmaya hazır olun. Bizi benzersiz yapan topluluğumuzdur!</p>
-
-        <a href="https://discord.gg/jBQUpUJw" target="_blank" class="discord-button">
-            ✨ Hemen Discord Sunucusuna Gel!
-        </a>
-
-        <h3>Neden TTNI?</h3>
-        <ul>
-            <li>Güncel ve Popüler Oyunlarda Etkinlikler</li>
-            <li>Samimi ve Saygılı Bir Topluluk</li>
-            <li>Özel Çekilişler ve Ödüller</li>
-        </ul>
+        <div class="footer">
+            CREDOS Tarafından Yapılmıştır. © 2025
+        </div>
     </div>
-
-    <footer>
-        <p>&copy; 2025 TTNI | Oyun Dünyası</p>
-    </footer>
-
 </body>
 </html>
